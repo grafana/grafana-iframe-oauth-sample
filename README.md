@@ -25,6 +25,10 @@ jwk_set_file = devenv/docker/blocks/oauth/jwks.json
 cache_ttl = 60m
 expected_claims = {"iss": "http://localhost:8087/auth/realms/grafana", "azp": "grafana-oauth"}
 auto_sign_up = true
+
+
+[security]
+allow_embedding = true
 ```
 
 - Start the sample repository
