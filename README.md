@@ -23,7 +23,7 @@ username_claim = login
 email_claim = email
 jwk_set_file = devenv/docker/blocks/oauth/jwks.json
 cache_ttl = 60m
-expected_claims = {"iss": "http://localhost:8087/auth/realms/grafana", "azp": "grafana-oauth"}
+expected_claims = {"iss": "http://env.grafana.local:8087/auth/realms/grafana", "azp": "grafana-oauth"}
 auto_sign_up = true
 url_login = true
 
@@ -44,7 +44,7 @@ Example login:
 
 - Sample app builds a grafana URL to the dashboard with the JWT token embbeded in the URL
 
-Example: `http://127.0.0.1:3000/d/RciOKLR4z/bob-the-board?orgId=1&kiosk&auth_token=eyJhbxxxxxxxxxxxxx`
+Example: `http://env.grafana.local:3000/d/RciOKLR4z/bob-the-board?orgId=1&kiosk&auth_token=eyJhbxxxxxxxxxxxxx`
 
 - This URL is used to display an iframe
 
