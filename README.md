@@ -8,7 +8,7 @@
 
 - Setup the [jwt-proxy development environment](https://github.com/grafana/grafana/tree/main/devenv/docker/blocks/jwt_proxy)
 
-`make devenv sources="jwt_proxy"`
+`make devenv sources="auth/jwt_proxy"`
 
 Add the following to your grafana configuration.
 
