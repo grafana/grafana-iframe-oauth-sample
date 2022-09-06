@@ -6,13 +6,13 @@
 
 `git clone https://github.com/grafana/grafana.git` 
 
-- Setup the [jwt-proxy development environment](https://github.com/grafana/grafana/tree/main/devenv/docker/blocks/jwt_proxy)
+- Setup the [jwt-proxy development environment](https://github.com/grafana/grafana/tree/main/devenv/docker/blocks/auth/jwt_proxy)
 
 `make devenv sources="auth/jwt_proxy"`
 
 Add the following to your grafana configuration.
 
-You may need to copy the [jwks.json](https://github.com/grafana/grafana/blob/main/devenv/docker/blocks/jwt_proxy/jwks.json) and change the path of `jwk_set_file` accordingly.
+You may need to copy the [jwks.json](https://github.com/grafana/grafana/blob/main/devenv/docker/blocks/auth/jwt_proxy/jwks.json) and change the path of `jwk_set_file` accordingly.
 
 ```ini
 [auth.jwt]
@@ -21,7 +21,7 @@ enable_login_token = true
 header_name = X-Forwarded-Access-Token
 username_claim = login
 email_claim = email
-jwk_set_file = devenv/docker/blocks/oauth/jwks.json
+jwk_set_file = devenv/docker/blocks/auth/oauth/jwks.json
 cache_ttl = 60m
 expected_claims = {"iss": "http://env.grafana.local:8087/auth/realms/grafana", "azp": "grafana-oauth"}
 auto_sign_up = true
